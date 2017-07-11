@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, user-scalable=no">
+<title>FlappyBird</title>
+<style type="text/css">
+body { margin: 0; }
+canvas { background: skyblue; display: block; margin: 0 auto; }
+</style>
+<script type="text/javascript" src="js/underscore-min.js"></script>
+<script type="text/javascript" src="js/simpleInheritance.js"></script>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+<!-- 中介者Game -->
+<script type="text/javascript" src="js/Game.js"></script>
+<!-- 帧工具类 -->
+<script type="text/javascript" src="js/FrameUtil.js"></script>
+<!-- 静态资源管理类 -->
+<script type="text/javascript" src="js/StaticResourceUtil.js"></script>
+<!-- 背景类 -->
+<script type="text/javascript" src="js/Background.js"></script>
+<!-- 鸟类 -->
+<script type="text/javascript" src="js/Bird.js"></script>
+<!-- 管道类 -->
+<script type="text/javascript" src="js/Pipe.js"></script>
+<!-- 分数类 -->
+<script type="text/javascript" src="js/ScoreManager.js"></script>
+<script type="text/javascript">
+document.addEventListener('touchstart', function (e) {
+	e.preventDefault();
+});
+var game = new Game({
+	fps: 80,
+	canvasId: 'canvas'
+});
+document.getElementById('canvas').width = document.documentElement.clientWidth;
+document.getElementById('canvas').height = document.documentElement.clientHeight;
+</script>
+</body>
+</html>
